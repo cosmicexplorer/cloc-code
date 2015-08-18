@@ -4801,6 +4801,7 @@ sub set_constants {                          # {{{1
             'hb'          => 'Harbour'               ,
             'hrl'         => 'Erlang'                ,
             'hs'          => 'Haskell'               , 
+            'hlsl'        => 'HLSL'                  ,
             'shader'      => 'HLSL'                  ,
             'cg'          => 'HLSL'                  ,
             'cginc'       => 'HLSL'                  ,
