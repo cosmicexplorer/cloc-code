@@ -1,5 +1,4 @@
 #!/usr/bin/env perl
-#!/usr/local/perl-5.22.0/bin/perl
 # cloc -- Count Lines of Code                  {{{1
 # Copyright (C) 2006-2015 Al Danial <al.danial@gmail.com>
 # First release August 2006
@@ -4715,6 +4714,7 @@ sub set_constants {                          # {{{1
             'awk'         => 'awk'                   ,
             'bash'        => 'Bourne Again Shell'    ,
             'bas'         => 'Visual Basic'          ,
+            'dxl'         => 'DOORS Extension Language',
             'bat'         => 'DOS Batch'             ,
             'BAT'         => 'DOS Batch'             ,
             'cmd'         => 'DOS Batch'             ,
@@ -5184,6 +5184,11 @@ sub set_constants {                          # {{{1
     'DITA'               => [   
                                 [ 'remove_html_comments',          ],
                                 [ 'call_regexp_common'  , 'HTML'   ],
+                            ],
+    'DOORS Extension Language' => [
+                                [ 'remove_matches'      , '^\s*//' ], 
+                                [ 'remove_inline'       , '//.*$'  ], 
+                                [ 'call_regexp_common'  , 'C'      ],
                             ],
     'dtrace'             => [   
                                 [ 'remove_matches'      , '^\s*#'  ], 
@@ -6044,6 +6049,7 @@ sub set_constants {                          # {{{1
     'dtrace'                       =>   2.00,
     'NASTRAN DMAP'                 =>   2.35,
     'dna4'                         =>   4.21,
+    'DOORS Extension Language'     =>   1.50,
     'DOS Batch'                    =>   0.63,
     'dsp assembly'                 =>   0.50,
     'dtabl'                        =>   1.74,
