@@ -4741,7 +4741,6 @@ sub set_constants {                          # {{{1
             'COB'         => 'COBOL'                 ,
             'coffee'      => 'CoffeeScript'          ,
             'component'   => 'Visualforce Component' ,
-            'config'      => 'ASP.Net'               ,
             'cpp'         => 'C++'                   ,
             'cs'          => 'C#'                    ,
             'csh'         => 'C Shell'               ,
