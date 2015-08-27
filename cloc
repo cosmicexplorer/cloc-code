@@ -3246,7 +3246,7 @@ sub print_language_info {                    # {{{1
 } # 1}}}
 sub print_language_filters {                 # {{{1
     my ($language,) = @_;
-    if (!@{$Filters_by_Language{$language}}) {
+    if (!$Filters_by_Language{$language}) {
         warn "Unknown language: $language\n";
         warn "Use --show-lang to list all defined languages.\n";
         return;
@@ -4740,6 +4740,7 @@ sub set_constants {                          # {{{1
             'cob'         => 'COBOL'                 ,
             'COB'         => 'COBOL'                 ,
             'coffee'      => 'CoffeeScript'          ,
+            'cson'        => 'CSON'                  , # CoffeeScript Object Notation
             'component'   => 'Visualforce Component' ,
             'cpp'         => 'C++'                   ,
             'cs'          => 'C#'                    ,
@@ -5144,6 +5145,12 @@ sub set_constants {                          # {{{1
     'CSS'                => [   [ 'call_regexp_common'  , 'C'      ], ],
     'COBOL'              => [   [ 'remove_cobol_comments',         ], ],
     'CoffeeScript'       => [   
+                                [ 'remove_between_general', '###', '###' ],
+                                [ 'remove_matches'      , '^\s*#'  ],
+                                [ 'remove_inline'       , '#.*$'   ], 
+                            ],
+    'CSON'               => [   
+                                [ 'remove_between_general', '###', '###' ],
                                 [ 'remove_matches'      , '^\s*#'  ],
                                 [ 'remove_inline'       , '#.*$'   ], 
                             ],
@@ -6008,6 +6015,7 @@ sub set_constants {                          # {{{1
     'codecenter'                   =>   2.22,
     'cofac'                        =>   2.22,
     'CoffeeScript'                 =>   2.00,
+    'CSON'                         =>   1.50,
     'cogen'                        =>   2.22,
     'cognos'                       =>   2.22,
     'cogo'                         =>   1.13,
